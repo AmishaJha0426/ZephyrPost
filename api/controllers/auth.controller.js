@@ -9,7 +9,11 @@ const signup = async (req, res ,next) => {
     next(errorHandler(400 , 'All fields are required'));
   }
 
-  const hashedPassword = bcryptjs.hashSync(password,10);
+  if (typeof password !== "string") {
+    return next(errorHandler(400, "Password must be a string"));
+  }
+  
+  const hashedPassword = bcryptjs.hashSync(password, 10);
   const newUser = new User({
     username,
     email,
@@ -18,7 +22,7 @@ const signup = async (req, res ,next) => {
 
   try {
     await newUser.save();
-    res.json("signup successful");
+    res.json({ message: "Signup successful" });
   } catch (error) {
     next(error);
     
