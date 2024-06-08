@@ -32,7 +32,7 @@ export default function Comment({ comment, onLike, onEdit, onDelete }) {
 
     const handleSave = async () => {
         try {
-            const res = await fetch(`/api/comment/editComment/${comment._id}`, {
+            const res = await fetch(`/api/comment/edit/${comment._id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
