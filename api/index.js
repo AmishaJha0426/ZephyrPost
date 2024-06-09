@@ -5,7 +5,7 @@ const userRoutes =require( './routes/user.routes.js');
 const authRoutes = require("./routes/auth.routes.js");
 const postRoutes = require("./routes/post.routes.js");
 const commentRoutes = require("./routes/comment.routes.js");
-import path from "path";
+const path =require('path');
 
 
 const cookieParser = require('cookie-parser');
