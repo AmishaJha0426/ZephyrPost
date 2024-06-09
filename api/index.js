@@ -28,9 +28,6 @@ mongoose
     console.log(err);
   });
 
-const __dirname = path.resolve();
-
-
 
 app.listen(3000, () => {
   console.log("server is running");
